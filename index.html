@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Form</title>
+
+<style>
+    *{
+        box-sizing:border-box;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+    background:#fff;
+    margin:30px;
+    display:flex;
+    justify-content:center;
+    }
+
+    form{
+        width:900px;
+    }
+
+    form{
+        width:900px;
+    }
+
+    fieldset{
+        margin-bottom:12px;
+        padding:15px;
+        border:1px solid #bdbdbd;
+    }
+
+    legend{
+        padding:0 5px;
+        font-size:20px;
+    }
+
+    .row{
+        display:flex;
+        align-items:flex-start;
+        margin-bottom:12px;
+    }
+
+    label{
+        width:170px;
+        font-size:18px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    select{
+        width:220px;
+        padding:6px;
+        font-size:16px;
+    }
+
+    textarea{
+        width:700px;
+        height:120px;
+        resize:none;
+        padding:8px;
+        font-size:16px;
+    }
+
+    .options label{
+        width:auto;
+        margin-right:15px;
+        font-size:16px;
+    }
+
+    .submit{
+        text-align:right;
+    }
+
+    button{
+        background:#0b38ff;
+        color:white;
+        border:none;
+        padding:10px 18px;
+        border-radius:6px;
+        font-size:18px;
+        cursor:pointer;
+    }
+
+    button:hover{
+        background:#062dd8;
+    }
+</style>
+
+</head>
+<body>
+
+<form action="https://teach-backend-fawn.vercel.app/api/product"
+      method="POST"
+      enctype="multipart/form-data">
+
+    <fieldset>
+        <legend>General Info</legend>
+
+        <div class="row">
+            <label>Item Name</label>
+            <input
+                type="text"
+                name="itemName"
+                value="Wireless Mouse"
+                required>
+        </div>
+
+        <div class="row">
+            <label>Description</label>
+            <textarea
+                name="itemDescription"
+                required>A comfortable wireless mouse with ergonomic design.</textarea>
+        </div>
+
+        <div class="row">
+            <label>Category</label>
+            <select name="category">
+                <option value="notSpecified">notSpecified</option>
+                <option value="consumption">consumption</option>
+                <option value="household">household</option>
+                <option value="electronic" selected>electronic</option>
+                <option value="gadget">gadget</option>
+            </select>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Misc.</legend>
+
+        <div class="row">
+            <label>Inventory Amount</label>
+            <input
+                type="number"
+                name="inventoryAmount"
+                value="50"
+                required>
+        </div>
+
+        <div class="row">
+            <label>List price</label>
+            <input
+                type="number"
+                name="listPrice"
+                value="799"
+                required>
+        </div>
+
+        <div class="row">
+            <label>Available Stores</label>
+
+            <div class="options">
+                <label><input type="checkbox" name="availableStore[]" value="Bangkok" checked> Bangkok</label>
+                <label><input type="checkbox" name="availableStore[]" value="Pattaya"> Pattaya</label>
+                <label><input type="checkbox" name="availableStore[]" value="Phuket" checked> Phuket</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <label>Status</label>
+
+            <div class="options">
+                <label><input type="radio" name="status" value="Active" checked> Active</label>
+                <label><input type="radio" name="status" value="Inactive"> Inactive</label>
+            </div>
+        </div>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Staff</legend>
+
+        <div class="row">
+            <label>Staff Email</label>
+            <input
+                type="email"
+                name="staffEmail"
+                value="u6715029@au.edu"
+                required>
+        </div>
+    </fieldset>
+
+    <div class="submit">
+        <button type="submit">Submit Form</button>
+    </div>
+
+</form>
+
+</body>
+</html>
